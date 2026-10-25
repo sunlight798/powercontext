@@ -80,7 +80,7 @@ export function SessionView({ language }: { language: Language }) {
     const date = new Date(value);
     return (
       <time dateTime={date.toISOString()}>
-        {date.toISOString().replace("T", " ").replace("Z", " UTC")}
+        {date.toISOString().slice(0, 19).replace("T", " ")}
       </time>
     );
   }

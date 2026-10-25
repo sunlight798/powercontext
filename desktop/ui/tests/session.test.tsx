@@ -65,7 +65,9 @@ for (const language of ["zh", "en"] as const) {
     expect(screen.getByText(t.bounds)).toBeTruthy();
     expect(screen.getByText(t.localOpsUnavailable)).toBeTruthy();
     expect(screen.getByText("512")).toBeTruthy();
-    expect(screen.getByText("2026-10-25 02:00:00.000 UTC")).toBeTruthy();
+    expect(screen.getByText("2026-10-25 00:00:00")).toBeTruthy();
+    expect(screen.getByText("2026-10-25 01:00:00")).toBeTruthy();
+    expect(screen.getByText("2026-10-25 02:00:00")).toBeTruthy();
     expect(screen.queryByRole("table")).toBeNull();
     expect(desktopApi.previewSessionDiagnostics).not.toHaveBeenCalled();
   });
